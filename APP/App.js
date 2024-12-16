@@ -5,20 +5,54 @@ import AppNavigator from './src/navigation/AppNavigator'; // Import your navigat
 // import 'nativewind/tailwind.css'; // Import the Tailwind styles
 import { CartProvider } from './src/contexts/CartContext';
 import { FavouritesProvider } from './src/contexts/FavouritesContext';
-import { UserProvider as UserContextProvider } from './src/contexts/UserContext';
+import { StripeProvider } from '@stripe/stripe-react-native';
 
 
 const App = () => {
   return (
-    <UserContextProvider>
+    < StripeProvider publishableKey='pk_test_51OXlAIAZK57wNYnQJNfcmMNa4p9xI681KyECP5FC3n2GZ9bMcUo0dB7gVOwNeIIYkAuQbnI5pPGuOJNZxyMbySZd00naBObXrO'>
       <FavouritesProvider>
         <CartProvider>
             <AppNavigator />
         </CartProvider>
       </FavouritesProvider>
-    </UserContextProvider>
-
+    </StripeProvider >
   );
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+// // src/App.js
+
+// import React from 'react';
+// import AppNavigator from './src/navigation/AppNavigator'; // Import your navigation setup
+// // import 'nativewind/tailwind.css'; // Import the Tailwind styles
+// import { CartProvider } from './src/contexts/CartContext';
+// import { FavouritesProvider } from './src/contexts/FavouritesContext';
+// import { UserProvider as UserContextProvider } from './src/contexts/UserContext';
+
+
+// const App = () => {
+//   return (
+//     <UserContextProvider>
+//       <FavouritesProvider>
+//         <CartProvider>
+//             <AppNavigator />
+//         </CartProvider>
+//       </FavouritesProvider>
+//     </UserContextProvider>
+
+//   );
+// };
+
+// export default App;

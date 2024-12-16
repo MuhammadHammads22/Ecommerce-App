@@ -8,7 +8,7 @@ import { ThemeContext } from '../../ThemeContext';
 import { CartContext } from '../contexts/CartContext'; // Ensure correct path
 import { lightTheme, darkTheme } from '../../themes';
 import { LinearGradient } from 'expo-linear-gradient';
-import { UserContext } from '../contexts/UserContext';
+// import { UserContext } from '../contexts/UserContext';
 
 const DEFAULT_PROFILE_IMAGE = 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg';
 
@@ -16,7 +16,7 @@ const CustomHeader = ({ userProfileImage = DEFAULT_PROFILE_IMAGE, username = 'Jo
   const { theme } = useContext(ThemeContext);
   const { cartItems } = useContext(CartContext);
   const navigation = useNavigation();
-  const { user } = useContext(UserContext);
+  // const { user } = useContext(UserContext);
   ;
   
 
@@ -48,7 +48,7 @@ const CustomHeader = ({ userProfileImage = DEFAULT_PROFILE_IMAGE, username = 'Jo
           }}
         />
         <Text style={[styles.username, { color: currentTheme.headerTextColor }]}>
-          {user.data.name}
+          {username}
         </Text>
       </TouchableOpacity>
 
